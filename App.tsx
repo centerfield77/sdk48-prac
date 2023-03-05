@@ -1,40 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Image } from "expo-image";
+import { StyleSheet, View } from "react-native";
+
+const blurhash =
+  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
-        <Text>A</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>B</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>C</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>D</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>E</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>F</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>G</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>H</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>I</Text>
-      </View>
-      <View style={styles.box}>
-        <Text>J</Text>
-      </View>
-      <StatusBar style='auto' />
+      <Image
+        style={styles.image}
+        source='https://picsum.photos/seed/696/3000/2000'
+        placeholder={blurhash}
+        contentFit='cover'
+        transition={{
+          duration: 5000,
+          effect: "curl-up",
+          timing: "ease-out",
+        }}
+      />
     </View>
   );
 }
@@ -42,18 +25,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    backgroundColor: "gray",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    gap: 20,
   },
-  box: {
-    backgroundColor: "white",
-    width: 150,
-    height: 150,
-    justifyContent: "center",
-    alignItems: "center",
+  image: {
+    flex: 1,
+    width: "100%",
+    backgroundColor: "#0553",
   },
 });
